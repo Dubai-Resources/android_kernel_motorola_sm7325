@@ -27,7 +27,9 @@
 	connectors = <&sde_wb &sde_dsi &sde_rscc &sde_dp &smmu_sde_unsec &smmu_sde_sec>;
 };
 
-
+&mdss_dsi_phy0 {
+	qcom,panel-allow-phy-poweroff;
+};
 
 &soc {
 	dsi_panel_pwr_supply_amoled: dsi_panel_pwr_supply_amoled {
@@ -149,6 +151,7 @@
 
 &mot_csot_nt37701_c_655_1080x2400_dsc_cmd_v0 {
 	qcom,esd-check-enabled;
+	qcom,ulps-enabled;
 	qcom,mdss-dsi-panel-status-check-mode = "te_chk_reg_rd";
 	qcom,mdss-dsi-panel-status-command = [06 01 00 01 00 00 01 0a];
 	qcom,mdss-dsi-panel-status-command-state = "dsi_lp_mode";
@@ -159,9 +162,9 @@
 	qcom,mdss-dsi-no-panel-on-read-support;
 	qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_dcs";
 	qcom,mdss-dsi-bl-min-level = <9>;
-	qcom,mdss-dsi-bl-max-level = <3514>;
+	qcom,mdss-dsi-bl-max-level = <4095>;
 	qcom,mdss-dsi-bl-default-level = <1757>;
-	qcom,mdss-brightness-max-level = <3514>;
+	qcom,mdss-brightness-max-level = <4095>;
 	qcom,platform-reset-gpio = <&tlmm 24 0>;
 	qcom,bl-dsc-cmd-state = "dsi_hs_mode";
 
@@ -214,6 +217,7 @@
 
 &mot_csot_nt37701_c_655_1080x2400_dsc_cmd_v1 {
 	qcom,esd-check-enabled;
+	qcom,ulps-enabled;
 	qcom,mdss-dsi-panel-status-check-mode = "te_chk_reg_rd";
 	qcom,mdss-dsi-panel-status-command = [06 01 00 01 00 00 01 0a];
 	qcom,mdss-dsi-panel-status-command-state = "dsi_lp_mode";
@@ -224,9 +228,9 @@
 	qcom,mdss-dsi-no-panel-on-read-support;
 	qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_dcs";
 	qcom,mdss-dsi-bl-min-level = <9>;
-	qcom,mdss-dsi-bl-max-level = <3514>;
+	qcom,mdss-dsi-bl-max-level = <4095>;
 	qcom,mdss-dsi-bl-default-level = <1757>;
-	qcom,mdss-brightness-max-level = <3514>;
+	qcom,mdss-brightness-max-level = <4095>;
 	qcom,platform-reset-gpio = <&tlmm 24 0>;
 	qcom,bl-dsc-cmd-state = "dsi_hs_mode";
 
@@ -279,6 +283,7 @@
 
 &mot_tm_nt37701_c_655_1080x2400_dsc_cmd_v0 {
 	qcom,esd-check-enabled;
+	qcom,ulps-enabled;
 	qcom,mdss-dsi-panel-status-check-mode = "te_chk_reg_rd";
 	qcom,mdss-dsi-panel-status-command = [06 01 00 01 00 00 01 0a];
 	qcom,mdss-dsi-panel-status-command-state = "dsi_lp_mode";
@@ -344,6 +349,7 @@
 
 &mot_tm_nt37701_c_655_1080x2400_dsc_cmd_v1 {
 	qcom,esd-check-enabled;
+	qcom,ulps-enabled;
 	qcom,mdss-dsi-panel-status-check-mode = "te_chk_reg_rd";
 	qcom,mdss-dsi-panel-status-command = [06 01 00 01 00 00 01 0a];
 	qcom,mdss-dsi-panel-status-command-state = "dsi_lp_mode";
@@ -409,6 +415,7 @@
 
 &mot_csot_nt37701_655_1080x2400_dsc_cmd_v0 {
 	qcom,esd-check-enabled;
+	qcom,ulps-enabled;
 	qcom,mdss-dsi-panel-status-check-mode = "te_chk_reg_rd";
 	qcom,mdss-dsi-panel-status-command = [06 01 00 01 00 00 01 0a];
 	qcom,mdss-dsi-panel-status-command-state = "dsi_lp_mode";
@@ -419,9 +426,9 @@
 	qcom,mdss-dsi-no-panel-on-read-support;
 	qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_dcs";
 	qcom,mdss-dsi-bl-min-level = <9>;
-	qcom,mdss-dsi-bl-max-level = <3514>;
+	qcom,mdss-dsi-bl-max-level = <4095>;
 	qcom,mdss-dsi-bl-default-level = <1757>;
-	qcom,mdss-brightness-max-level = <3514>;
+	qcom,mdss-brightness-max-level = <4095>;
 	qcom,platform-reset-gpio = <&tlmm 24 0>;
 	qcom,bl-dsc-cmd-state = "dsi_hs_mode";
 
@@ -474,6 +481,7 @@
 
 &mot_csot_nt37701_655_1080x2400_dsc_cmd_v1 {
 	qcom,esd-check-enabled;
+	qcom,ulps-enabled;
 	qcom,mdss-dsi-panel-status-check-mode = "te_chk_reg_rd";
 	qcom,mdss-dsi-panel-status-command = [06 01 00 01 00 00 01 0a];
 	qcom,mdss-dsi-panel-status-command-state = "dsi_lp_mode";
@@ -484,9 +492,9 @@
 	qcom,mdss-dsi-no-panel-on-read-support;
 	qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_dcs";
 	qcom,mdss-dsi-bl-min-level = <9>;
-	qcom,mdss-dsi-bl-max-level = <3514>;
+	qcom,mdss-dsi-bl-max-level = <4095>;
 	qcom,mdss-dsi-bl-default-level = <1757>;
-	qcom,mdss-brightness-max-level = <3514>;
+	qcom,mdss-brightness-max-level = <4095>;
 	qcom,platform-reset-gpio = <&tlmm 24 0>;
 	qcom,bl-dsc-cmd-state = "dsi_hs_mode";
 
@@ -539,6 +547,7 @@
 
 &mot_tm_nt37701_655_1080x2400_dsc_cmd_v0 {
 	qcom,esd-check-enabled;
+	qcom,ulps-enabled;
 	qcom,mdss-dsi-panel-status-check-mode = "te_chk_reg_rd";
 	qcom,mdss-dsi-panel-status-command = [06 01 00 01 00 00 01 0a];
 	qcom,mdss-dsi-panel-status-command-state = "dsi_lp_mode";
@@ -549,9 +558,9 @@
 	qcom,mdss-dsi-no-panel-on-read-support;
 	qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_dcs";
 	qcom,mdss-dsi-bl-min-level = <9>;
-	qcom,mdss-dsi-bl-max-level = <3514>;
+	qcom,mdss-dsi-bl-max-level = <4095>;
 	qcom,mdss-dsi-bl-default-level = <1757>;
-	qcom,mdss-brightness-max-level = <3514>;
+	qcom,mdss-brightness-max-level = <4095>;
 	qcom,platform-reset-gpio = <&tlmm 24 0>;
 	qcom,bl-dsc-cmd-state = "dsi_hs_mode";
 
@@ -604,6 +613,7 @@
 
 &mot_tm_nt37701_655_1080x2400_dsc_cmd_v1 {
 	qcom,esd-check-enabled;
+	qcom,ulps-enabled;
 	qcom,mdss-dsi-panel-status-check-mode = "te_chk_reg_rd";
 	qcom,mdss-dsi-panel-status-command = [06 01 00 01 00 00 01 0a];
 	qcom,mdss-dsi-panel-status-command-state = "dsi_lp_mode";
@@ -614,9 +624,9 @@
 	qcom,mdss-dsi-no-panel-on-read-support;
 	qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_dcs";
 	qcom,mdss-dsi-bl-min-level = <9>;
-	qcom,mdss-dsi-bl-max-level = <3514>;
+	qcom,mdss-dsi-bl-max-level = <4095>;
 	qcom,mdss-dsi-bl-default-level = <1757>;
-	qcom,mdss-brightness-max-level = <3514>;
+	qcom,mdss-brightness-max-level = <4095>;
 	qcom,platform-reset-gpio = <&tlmm 24 0>;
 	qcom,bl-dsc-cmd-state = "dsi_hs_mode";
 
@@ -669,6 +679,7 @@
 
 &mot_tm_nt37701_655_1080x2400_dsc_cmd_v2 {
 	qcom,esd-check-enabled;
+	qcom,ulps-enabled;
 	qcom,mdss-dsi-panel-status-check-mode = "te_chk_reg_rd";
 	qcom,mdss-dsi-panel-status-command = [06 01 00 01 00 00 01 0a];
 	qcom,mdss-dsi-panel-status-command-state = "dsi_lp_mode";
@@ -679,9 +690,9 @@
 	qcom,mdss-dsi-no-panel-on-read-support;
 	qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_dcs";
 	qcom,mdss-dsi-bl-min-level = <9>;
-	qcom,mdss-dsi-bl-max-level = <3514>;
+	qcom,mdss-dsi-bl-max-level = <4095>;
 	qcom,mdss-dsi-bl-default-level = <1757>;
-	qcom,mdss-brightness-max-level = <3514>;
+	qcom,mdss-brightness-max-level = <4095>;
 	qcom,platform-reset-gpio = <&tlmm 24 0>;
 	qcom,bl-dsc-cmd-state = "dsi_hs_mode";
 
