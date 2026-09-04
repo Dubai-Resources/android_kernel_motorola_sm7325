@@ -727,12 +727,7 @@ int usb_gadget_disconnect(struct usb_gadget *gadget)
 	ret = gadget->ops->pullup(gadget, 0);
 	if (!ret) {
 		gadget->connected = 0;
-		if (gadget->udc->driver) {
-			gadget->udc->driver->disconnect(gadget);
-		} else {
-			ret = -ENODEV;
-			pr_warn("usb_gadget_disconnect: udc driver is gone\n");
-		}
+		gadget->udc->driver->disconnect(gadget);
 	}
 
 out:
@@ -756,9 +751,6 @@ EXPORT_SYMBOL_GPL(usb_gadget_disconnect);
 int usb_gadget_deactivate(struct usb_gadget *gadget)
 {
 	int ret = 0;
-
-	if (!gadget)
-		return -ENODEV;
 
 	if (gadget->deactivated)
 		goto out;
@@ -795,9 +787,6 @@ EXPORT_SYMBOL_GPL(usb_gadget_deactivate);
 int usb_gadget_activate(struct usb_gadget *gadget)
 {
 	int ret = 0;
-
-	if (!gadget)
-		return -ENODEV;
 
 	if (!gadget->deactivated)
 		goto out;
